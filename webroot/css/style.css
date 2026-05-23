@@ -1,0 +1,1169 @@
+/* =========================================
+   AQUAMARINE + CREAM DASHBOARD FINAL
+========================================= */
+
+html,
+body{
+
+    margin:0;
+    padding:0;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    font-family:'Segoe UI',sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ecfeff,
+        #f0fdfa,
+        #fffaf0
+    );
+
+    color:#1e293b;
+
+    animation:fadeBody 1s ease;
+}
+
+/* =========================================
+   GLOBAL ANIMATION
+========================================= */
+
+@keyframes fadeBody{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideSidebar{
+
+    from{
+        transform:translateX(-100%);
+    }
+
+    to{
+        transform:translateX(0);
+    }
+}
+
+@keyframes glowText{
+
+    from{
+        text-shadow:0 0 10px rgba(45,212,191,.1);
+    }
+
+    to{
+        text-shadow:0 0 25px rgba(45,212,191,.45);
+    }
+}
+
+@keyframes ring{
+
+    0%{
+        transform:rotate(0);
+    }
+
+    5%{
+        transform:rotate(15deg);
+    }
+
+    10%{
+        transform:rotate(-15deg);
+    }
+
+    15%{
+        transform:rotate(10deg);
+    }
+
+    20%{
+        transform:rotate(-10deg);
+    }
+
+    25%{
+        transform:rotate(0);
+    }
+
+    100%{
+        transform:rotate(0);
+    }
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar{
+
+    width:280px;
+
+    height:100vh;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:24px 18px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #0f172a,
+        #0f766e,
+        #2dd4bf,
+        #000
+    );
+
+    color:#fff;
+
+    border-radius:0 24px 24px 0;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.25);
+
+    z-index:1000;
+
+    animation:slideSidebar .8s ease;
+}
+
+.sidebar .brand{
+
+    margin-bottom:45px;
+}
+
+.sidebar .nav-item{
+
+    margin-bottom:10px;
+}
+
+.sidebar .nav-link{
+
+    color:#fff;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    font-weight:500;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    transition:.35s ease;
+}
+
+.sidebar .nav-link i{
+
+    width:22px;
+
+    text-align:center;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active{
+
+    background:rgba(255,255,255,.15);
+
+    transform:translateX(6px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.2);
+
+    color:#fff;
+}
+
+.sidebar .logout{
+
+    margin-top:auto;
+
+    padding-top:40px;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content{
+
+    margin-left:320px;
+
+    width:calc(100% - 320px);
+
+    min-height:100vh;
+
+    padding:20px 30px;
+
+    box-sizing:border-box;
+
+    animation:fadeUp 1s ease;
+}
+
+.main-content-dashboard{
+
+    margin-left:320px;
+
+    width:calc(100% - 320px);
+
+    min-height:100vh;
+
+    padding:20px 30px;
+
+    box-sizing:border-box;
+
+    animation:fadeUp 1s ease;
+}
+
+/* =========================================
+   DASHBOARD FIX
+========================================= */
+
+.dashboard-wrapper{
+
+    max-width:100%;
+
+    width:100%;
+
+    margin:0;
+
+    padding:0;
+}
+
+.dashboard-content{
+
+    width:100%;
+
+    margin-top:10px;
+}
+
+.top-header{
+
+    margin-bottom:25px;
+}
+
+/* =========================================
+   DASHBOARD CARDS
+========================================= */
+
+.stat-card{
+
+    min-height:180px;
+}
+
+.content-card{
+
+    min-height:500px;
+}
+
+/* =========================================
+   TOP HEADER
+========================================= */
+
+.top-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:35px 45px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.85),
+        rgba(236,254,255,.95),
+        rgba(240,253,250,.95)
+    );
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.6);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.08);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.top-header::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:rgba(45,212,191,.12);
+
+    border-radius:50%;
+
+    right:-120px;
+    bottom:-160px;
+}
+
+.welcome-section{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    z-index:2;
+}
+
+.welcome-section h1{
+
+    font-size:3.4rem;
+
+    margin:0;
+
+    font-weight:800;
+
+    color:#0f172a;
+}
+
+.welcome-section h1 span{
+
+    color:#14b8a6;
+}
+
+.welcome-section p{
+
+    margin-top:8px;
+
+    font-size:1.1rem;
+
+    color:#64748b;
+}
+
+/* =========================================
+   HEADER ACTIONS
+========================================= */
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    z-index:2;
+}
+
+.notification{
+
+    position:relative;
+
+    width:70px;
+    height:70px;
+
+    border-radius:24px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+    animation:ring 3s infinite;
+}
+
+.notification:hover{
+
+    transform:translateY(-5px);
+}
+
+.notification .badge{
+
+    position:absolute;
+
+    top:-4px;
+    right:-4px;
+
+    width:26px;
+    height:26px;
+
+    background:#ef4444;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:14px 22px;
+
+    border-radius:24px;
+
+    background:white;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+}
+
+.profile-card:hover{
+
+    transform:translateY(-4px);
+}
+
+.profile-card img{
+
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid #ccfbf1;
+}
+
+.profile-info h4{
+
+    margin:0;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+}
+
+.profile-info p{
+
+    margin-top:5px;
+
+    color:#64748b;
+}
+
+/* =========================================
+   TITLES
+========================================= */
+
+.dashboard-title,
+h1{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:8px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #0f172a,
+        #0f766e,
+        #2dd4bf
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:glowText 3s infinite alternate;
+}
+
+.text-muted{
+
+    color:#64748b !important;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card{
+
+    border:none !important;
+
+    border-radius:30px !important;
+
+    background:white !important;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08) !important;
+
+    overflow:hidden;
+}
+
+/* =========================================
+   TABLES
+========================================= */
+
+.table-responsive{
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+}
+
+.table-responsive::-webkit-scrollbar{
+
+    display:none;
+}
+
+.table{
+
+    width:100% !important;
+
+    background:white;
+
+    border-collapse:collapse;
+}
+
+.table th{
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    padding:18px 14px;
+
+    white-space:nowrap;
+}
+
+.table td{
+
+    padding:18px 14px;
+
+    vertical-align:middle;
+
+    border-top:1px solid #e2e8f0;
+}
+
+/* =========================================
+   FINAL DASHBOARD ALIGN FIX
+========================================= */
+
+.dashboard-wrapper{
+
+    margin-left:320px !important;
+
+    width:calc(100% - 320px) !important;
+
+    padding:20px 30px !important;
+
+    box-sizing:border-box !important;
+}
+
+.main-content-dashboard{
+
+    margin-left:0 !important;
+
+    width:100% !important;
+
+    padding:0 !important;
+}
+
+/* =========================================
+   UPDATED PRIORITY & STATUS BADGES
+========================================= */
+
+/* PRIORITY */
+
+.priority-badge{
+
+    display:inline-flex !important;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:120px;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#fff !important;
+
+    text-align:center;
+
+    letter-spacing:.3px;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.12);
+
+    transition:.3s ease;
+}
+
+.priority-badge:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.15);
+}
+
+.priority-high{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ef4444,
+        #f87171
+    ) !important;
+}
+
+.priority-medium{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f59e0b,
+        #fbbf24
+    ) !important;
+}
+
+.priority-low{
+
+    background:
+    linear-gradient(
+        135deg,
+        #10b981,
+        #34d399
+    ) !important;
+}
+
+/* STATUS */
+
+.status-badge{
+
+    display:inline-flex !important;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:120px;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#fff !important;
+
+    text-align:center;
+
+    letter-spacing:.3px;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.12);
+
+    transition:.3s ease;
+}
+
+.status-badge:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.15);
+}
+
+.status-pending{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f59e0b,
+        #fbbf24
+    ) !important;
+}
+
+.status-progress{
+
+    background:
+    linear-gradient(
+        135deg,
+        #3b82f6,
+        #60a5fa
+    ) !important;
+}
+
+.status-completed{
+
+    background:
+    linear-gradient(
+        135deg,
+        #10b981,
+        #34d399
+    ) !important;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:991px){
+
+    .dashboard-wrapper{
+
+        margin-left:0 !important;
+
+        width:100% !important;
+
+        padding:20px !important;
+    }
+
+    .main-content{
+
+        margin-left:0;
+
+        width:100%;
+
+        padding:20px;
+    }
+
+    .sidebar{
+
+        width:100%;
+
+        height:auto;
+
+        position:relative;
+
+        border-radius:0;
+    }
+
+    .top-header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:25px;
+    }
+
+    .welcome-section h1{
+
+        font-size:2.2rem;
+    }
+
+    
+/* =========================================
+   MODERN LOGO ICON
+========================================= */
+
+.logo-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2dd4bf,
+        #14b8a6,
+        #0ea5e9
+    );
+
+    box-shadow:
+        0 10px 25px rgba(45,212,191,.35);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.logo-icon::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    background:rgba(255,255,255,.18);
+
+    border-radius:50%;
+
+    top:-70px;
+    left:-50px;
+}
+
+.logo-icon i{
+
+    font-size:1.8rem;
+
+    color:white;
+
+    position:relative;
+
+    z-index:2;
+}
+
+/* BRAND TEXT SPACING */
+
+.sidebar .brand h5{
+
+    gap:16px !important;
+}
+
+
+/* =========================================
+   DASHBOARD GRID FIX
+========================================= */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
+    gap:24px;
+
+    width:100%;
+}
+
+.stat-card,
+.content-card{
+
+    width:100% !important;
+
+    min-width:0 !important;
+
+    overflow:hidden;
+}
+
+/* =========================================
+   HEADER ACTIONS
+========================================= */
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+/* NOTIFICATION */
+
+.notification{
+
+    position:relative;
+
+    width:84px;
+    height:84px;
+
+    border-radius:30px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+}
+
+.notification:hover{
+
+    transform:translateY(-4px);
+}
+
+.notification .badge{
+
+    position:absolute;
+
+    top:-2px;
+    right:-2px;
+
+    width:34px;
+    height:34px;
+
+    border-radius:50%;
+
+    background:#ef4444;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+/* PROFILE */
+
+.profile-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:18px 22px;
+
+    border-radius:28px;
+
+    background:white;
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,.08);
+}
+
+.profile-card img{
+
+    width:78px;
+    height:78px;
+
+    border-radius:50%;
+
+    border:4px solid #ccfbf1;
+}
+
+.profile-info h4{
+
+    margin:0;
+
+    font-size:1.5rem;
+
+    font-weight:800;
+}
+
+.profile-info p{
+
+    margin:0;
+
+    color:#64748b;
+}
+
+
+/* =========================================
+   LOGOUT BUTTON UI
+========================================= */
+
+.logout{
+
+    margin-top:auto;
+
+    padding-top:35px;
+}
+
+.logout .nav-link{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:16px 20px !important;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(239,68,68,.15),
+        rgba(127,29,29,.08)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#ffffff !important;
+
+    font-weight:700;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.15);
+}
+
+/* LIGHT EFFECT */
+
+.logout .nav-link::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.18),
+        transparent
+    );
+
+    transition:.6s ease;
+}
+
+.logout .nav-link:hover::before{
+
+    left:120%;
+}
+
+/* HOVER */
+
+.logout .nav-link:hover{
+
+    transform:translateY(-4px);
+
+    background:
+    linear-gradient(
+        135deg,
+        #ef4444,
+        #b91c1c
+    );
+
+    box-shadow:
+        0 15px 30px rgba(239,68,68,.35);
+}
+
+/* ICON */
+
+.logout .nav-link i{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,.05)
+    );
+
+    font-size:1.1rem;
+
+    transition:.3s ease;
+}
+
+.logout .nav-link:hover i{
+
+    transform:rotate(-8deg) scale(1.08);
+}
+
+/* TEXT */
+
+.logout .nav-link span{
+
+    letter-spacing:.3px;
+}
+}
